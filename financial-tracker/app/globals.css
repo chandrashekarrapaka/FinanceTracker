@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #37352f;
+  --primary: #2eaadc;
+  --secondary: #f1f1f0;
+  --accent: #e16259;
+  --muted: #9b9a97;
+  --border: #e9e9e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #191919;
+    --foreground: #e6e6e5;
+    --primary: #2eaadc;
+    --secondary: #2f3437;
+    --accent: #e16259;
+    --muted: #9b9a97;
+    --border: #373737;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.card {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.button {
+  background-color: var(--primary);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #2596be;
+}
+
+input, select {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--foreground);
+  padding: 6px 8px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.select-content {
+  z-index: 50;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.select-content [data-radix-select-item] {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.select-content [data-radix-select-item]:hover {
+  background-color: var(--secondary);
+}
+
+.select-content [data-radix-select-item][data-state="checked"] {
+  background-color: var(--primary);
+  color: white;
+}
+
+nav {
+  background-color: var(--background);
+  border-top: 1px solid var(--border);
+}
+
+nav button {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+nav button:hover {
+  color: var(--foreground);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
